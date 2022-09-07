@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using SaleWebMVC.Models.ViewModels;
 
 namespace SaleWebMVC.Controllers
 {
@@ -17,7 +18,8 @@ namespace SaleWebMVC.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Vendas WEB MVC App from C#";
+            ViewData["email"] = "denis_machado7@hotmail.com; denis-machado@uol.com.br";
 
             return View();
         }
@@ -37,7 +39,7 @@ namespace SaleWebMVC.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new SaleWebMVC.Models.ViewModels.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
